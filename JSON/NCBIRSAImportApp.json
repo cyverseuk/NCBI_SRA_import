@@ -1,0 +1,50 @@
+{
+  "name": "NCBI_SRA_import",
+  "label": "NCBI SRA import",
+  "shortDescription": "Import NCBI SRA files into CyVerse storage using the fasp protocol. This application uses the new aspera-connect-3.7.2 program code.",
+  "longDescription": "",
+  "helpURI": "https://www.ncbi.nlm.nih.gov/books/NBK242625/",
+  "datePublished": "",
+  "author":"Alice Minotto",
+  "version": "0.0.0",
+  "deploymentSystem": "cyverseUK-Storage2",
+  "deploymentPath": "/mnt/data/apps/ncbi_sra_import",
+  "executionSystem": "cyverseUK-Batch2",
+  "executionType": "CLI",
+  "parallelism": "SERIAL",
+  "templatePath": "wrapper.sh",
+  "testPath": "test.sh",
+  "ontology": [ ],
+  "tags": [ "CyverseUK" ],
+  "inputs": [
+    {"id": "list",
+    "value": {
+      "required": false,
+      "default": ""
+    },
+    "details": { "label": "SRA accession list",
+      "description": "file with SRA entries to download list",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": 1
+    }}
+    ],
+
+
+  "parameters": [
+    {"id": "SRA",
+    "value": {
+      "type": "string",
+      "visible": true,
+      "validator": "^^((SRR|ERR|DRR)\\d+)$$"
+    },
+    "details": {
+      "label" : "SRA accession",
+      "showArgument": false
+    },
+    "semantics": {
+      "maxCardinality": -1
+      }}
+]
+}
