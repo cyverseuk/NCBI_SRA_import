@@ -15,4 +15,3 @@ USER root
 WORKDIR /data
 
 ENTRYPOINT ["/home/cyverse_user/.aspera/connect/bin/ascp", "-i", "/home/cyverse_user/.aspera/connect/etc/asperaweb_id_dsa.openssh", "-k","1","-Tr","-l","800m"]
-#, "anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR304/SRR304976/SRR304976.sra","anonftp@ftp.ncbi.nlm.nih.gov:sra/sra-instant/reads/ByRun/sra/SRR/SRR110/SRR1103214/SRR1103214.sra", "/data"]
